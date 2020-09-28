@@ -1,0 +1,37 @@
+#include<bits/stdc++.h>
+using namespace std;
+    class Node
+    {
+        public:
+        int data;
+        Node* next;
+    };
+    void display(Node* p)
+    {
+        if(p!=NULL)
+        {
+            cout<<p->data<<"->";
+            display(p->next);
+        }
+    }
+    int main()
+    {
+        int a[]={2,3,4,5,6,7};
+        Node* head=new Node;
+        Node* last;
+        Node* temp;
+        head->data=a[0];
+        head->next=nullptr;
+        last=head;
+        for(int i=1;i<sizeof(a)/sizeof(a[0]);i++)
+        {
+            temp=new Node;
+            temp->data=a[i];
+            temp->next=nullptr;
+            last->next=temp;
+            last=temp;
+        }
+        
+        display(head);
+    }
+      
